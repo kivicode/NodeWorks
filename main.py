@@ -18,8 +18,6 @@ if __name__ == '__main__':
     s21 = net.add_node(SumNode())
     s22 = net.add_node(SumNode())
 
-    s31 = net.add_node(SumNode())
-
     # Edges
     net.add_edge(v1, s1, 0, 0)
     net.add_edge(v1, s2, 0, 0)
@@ -37,10 +35,7 @@ if __name__ == '__main__':
     net.add_edge(s2, s22, 0, 0)
     net.add_edge(s3, s22, 0, 1)
 
-    net.add_edge(s21, s31, 0, 0)
-    net.add_edge(s22, s31, 0, 1)
-
-    out = net.compute(s31)
+    out = net.compute_all()
     print(out)
 
     poss = {
@@ -54,7 +49,5 @@ if __name__ == '__main__':
 
         s21: (60, 5),
         s22: (60, 15),
-
-        s31: (90, 10),
     }
     net.draw(pos=poss)

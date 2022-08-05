@@ -40,6 +40,15 @@ class Graph:
 			end.set_input(edge.to_slot, out[edge.from_slot])
 		return self._nodes[end_node].forward()
 
+	def compute_all(self):
+		outputs = {}
+		for end_node in self.find_end_nodes():
+			outputs[self._nodes[end_node]] = self.compute(end_node)
+		return outputs
+
+	def find_end_nodes(self):
+		return [u for u, deg in self._graph.out_degree if deg == 0]
+
 	def draw(self, **kwargs):
 		nx.draw(self._graph, with_labels=True, **kwargs)
 		plt.show()
