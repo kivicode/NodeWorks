@@ -40,6 +40,6 @@ class Graph:
 			end.set_input(edge.to_slot, out[edge.from_slot])
 		return self._nodes[end_node].forward()
 
-	def draw(self):
-		nx.draw_kamada_kawai(self._graph, with_labels=True)
+	def draw(self, **kwargs):
+		nx.draw(self._graph, with_labels=True, **kwargs)
 		plt.show()
