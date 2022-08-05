@@ -1,5 +1,5 @@
-from core import Graph
-from presets import ValueNode, SumNode
+from nodeworks.presets import ValueNode, SumNode
+from nodeworks import Graph
 
 
 if __name__ == '__main__':

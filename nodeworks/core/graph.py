@@ -4,7 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 from .edge import Edge
-from .base_node import Node
+from .base_node import BaseNode
 from .errors import NodeError
 
 
@@ -13,9 +13,9 @@ class Graph:
 	def __init__(self, **attrs):
 		self._attrs = attrs
 		self._graph = nx.MultiDiGraph(incoming_graph_data=None)
-		self._nodes: Dict[int, Node] = {}
+		self._nodes: Dict[int, BaseNode] = {}
 
-	def add_node(self, node: Node) -> int:
+	def add_node(self, node: BaseNode) -> int:
 		node.index = index = len(self._graph)
 		self._nodes[index] = node
 		self._graph.add_node(index)

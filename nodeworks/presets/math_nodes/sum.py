@@ -1,7 +1,7 @@
-from core import Node, Slot
+from nodeworks.core import BaseNode, Slot
 
 
-class SumNode(Node):
+class SumNode(BaseNode):
 
 	def __init__(self):
 		super().__init__(

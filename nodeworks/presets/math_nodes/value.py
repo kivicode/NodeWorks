@@ -1,7 +1,7 @@
-from core import Node, Slot
+from nodeworks.core import BaseNode, Slot
 
 
-class ValueNode(Node):
+class ValueNode(BaseNode):
 
 	def __init__(self):
 		super().__init__(

@@ -1,11 +1,11 @@
-from typing import Collection, Union, Any, Dict
+from typing import Collection, Any, Dict
 from abc import abstractmethod, ABC
 
-from core.slot import Slot
-from utils.hints import overridable
+from nodeworks.core.slot import Slot
+from nodeworks.utils.hints import overridable
 
 
-class Node(ABC):
+class BaseNode(ABC):
 
 	def __init__(self, in_slots: Collection[Slot] = tuple(), out_slots: Collection[Slot] = tuple()):
 		self.index = None
